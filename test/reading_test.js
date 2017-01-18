@@ -14,7 +14,7 @@ describe('Reading users out of the database', () => {
     // joe will be the instance of joe here
     User.find({ name: 'Joe' })
       .then((users) => {
-        console.log(users);
+        assert(users[0].id.toString() === joe._id.toString());
         done();
       });
   });
