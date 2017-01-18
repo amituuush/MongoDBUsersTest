@@ -14,7 +14,15 @@ describe('Reading users out of the database', () => {
     // joe will be the instance of joe here
     User.find({ name: 'Joe' })
       .then((users) => {
-        assert(users[0].id.toString() === joe._id.toString());
+        assert(users[0]._id.toString() === joe._id.toString());
+        done();
+      });
+  });
+
+  it('find a user with a particular id', (done) => {
+    User.findOne({ _id: joe._id })
+      .then((user) => {
+        assert(user.name === 'Joe');
         done();
       });
   });
