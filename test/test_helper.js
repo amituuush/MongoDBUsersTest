@@ -1,4 +1,4 @@
-import mongoose from 'mongoose';
+const mongoose = require('mongoose');
 
 // connects mongoose to mongodb
 // mongo will connect to db called /users-test
