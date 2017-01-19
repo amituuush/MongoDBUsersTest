@@ -7,7 +7,10 @@ const Schema = mongoose.Schema;
 // once we create the model, mongoose will create a collection in our data
 
 const UserSchema = new Schema({
-  name: String,
+  name: {
+    type: String,
+    required: [true, 'Name is required.']
+  },
   postCount: Number
 });
 // now we can feed this into mongoose to create a user model
