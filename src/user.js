@@ -1,7 +1,9 @@
 const mongoose = require('mongoose');
+const PostSchema = require('./post');
 const Schema = mongoose.Schema;
 // this allows us to create a schema for our use model.
 // schema says 'I expect model to have properties and the data we expect those properties to be'
+
 
 // Model represents all of the data in a single collection in our mongo database
 // once we create the model, mongoose will create a collection in our data
@@ -11,7 +13,8 @@ const UserSchema = new Schema({
     type: String,
     required: [true, 'Name is required.']
   },
-  postCount: Number
+  postCount: Number,
+  posts: [PostSchema]
 });
 // now we can feed this into mongoose to create a user model
 // schema tells the model the properties they expect the model to have
