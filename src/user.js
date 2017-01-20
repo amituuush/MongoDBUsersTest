@@ -14,7 +14,11 @@ const UserSchema = new Schema({
     required: [true, 'Name is required.']
   },
   postCount: Number,
-  posts: [PostSchema]
+  posts: [PostSchema],
+  blogPosts:[{
+    type: Schema.Types.ObjectId,
+    ref: 'blogPost'
+  }]
 });
 // now we can feed this into mongoose to create a user model
 // schema tells the model the properties they expect the model to have
