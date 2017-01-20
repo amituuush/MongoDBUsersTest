@@ -7,11 +7,17 @@ describe('Associations', () => {
   let joe, blogPost, comment;
 
   beforeEach((done) => {
-    joe = new User({ name: 'Joe' });
+    joe = new User({
+      name: 'Joe'
+    });
     blogPost = new BlogPost({
       title: 'JS is great',
       content: 'Yep it really is'
     });
-    comment = new Comment({ content: 'Congrats on a great post' });
+    comment = new Comment({
+      content: 'Congrats on a great post'
+    });
+
+    joe.blogPosts.push(blogPost);
   });
 });
