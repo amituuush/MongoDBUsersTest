@@ -31,7 +31,6 @@ beforeEach((done) => {
         done();
       });
     });
-    done();
   });
   // mocha will continue to run tests and were not sure if the drop is completed before next test
 
