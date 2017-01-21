@@ -24,6 +24,16 @@ describe('Associations', () => {
 
     Promise.all([joe.save(), blogPost.save(), comment.save()])
       .then(() => done());
+
+  });
+
+    it.only('saves a relation between a user and a blogpost', (done) => {
+      User.findOne({ name: 'Joe' })
+      .populate('blogPosts')
+      .then((user) => {
+        console.log(user);
+        done();
+      });
     });
 
 });
