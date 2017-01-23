@@ -36,4 +36,22 @@ describe('Associations', () => {
       });
     });
 
+    it('saves a full relation graph', (done) => {
+      User.findOne({ name: 'Joe' })
+        .populate({
+          path: 'blogPosts',
+          populate: {
+            path: 'comments',
+            model: 'comment'
+            populate: {
+              path: 'user',
+              model: 'user'
+            }
+          }
+        })
+        .then((user) => {
+          console.log(user.blogPosts[0]);
+          done();
+        })
+    });
 });
