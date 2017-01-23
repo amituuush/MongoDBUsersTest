@@ -25,6 +25,7 @@ describe('Associations', () => {
 
     Promise.all([joe.save(), blogPost.save(), comment.save()])
       .then(() => done());
+
   });
 
     it('saves a relation between a user and a blogpost', (done) => {
@@ -56,6 +57,7 @@ describe('Associations', () => {
           assert(user.blogPosts[0].comments[0].user.name === 'Joe');
           
           done();
-        })
+        });
     });
+
 });
